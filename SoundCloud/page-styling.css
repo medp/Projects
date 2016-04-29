@@ -19,6 +19,7 @@ body{
 }
 header{
   position: fixed;
+  z-index: 1;
   top:0;
   left:0;
   background-color:#333;
@@ -35,8 +36,9 @@ footer{
   border-top:1px solid rgba(0,0,0,.15);
 }
 aside{
-  color:
+  position: absolute;
   display: inline-block;
+  right:0;
   top:55px;
   width:300px;
   height:100%;
@@ -48,12 +50,15 @@ aside{
   /*margin-top: 0;*/
 }
 .inner-header a:link{
-  color:#fff;
+  color:#e5e5e5;
   font-size: 20px;
 }
 .inner-header a:visited{
-  color:#fff;
+  color:#e5e5e5;
   font-size: 20px;
+}
+.inner-header a:hover{
+  color:#fff;
 }
 .header-left{
   width: 25%;
@@ -101,6 +106,7 @@ aside{
 }
 .header-right{
   display: inline-block;
+  height:100%;
   width:24%;
 }
 .navhead-right{
@@ -117,17 +123,31 @@ aside{
 }
 .dropdown{
   display: inline-block;
+  position: relative;
 }
 .dropbtn{
   padding-bottom: 14px;
   outline: none;
 }
-.left-content{
-  display: inline-block;
-  width: 850px;
-  padding-right: 30px;
-  border-right: 1px solid #f2f2f2;
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 3px;
+    background-color:#000;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
+.dropdown-content a {
+    color: black;
+    padding: 12px 10px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover {
+  background-color: #333;
+}
+.show {display:block;}
+
 .content-wrapper{
   background-color: #fff;
   height: 100%;
@@ -136,10 +156,17 @@ aside{
 }
 .align-content{
   display: block;
+  position:relative;
   width:94%;
   height: 100%;
   margin:0 auto;
   padding-top: 30px;
+}
+.left-content{
+  display: inline-block;
+  width: 850px;
+  padding-right: 30px;
+  border-right: 1px solid #f2f2f2;
 }
 .content-nav{
     border-bottom: 1px solid #f2f2f2;
@@ -218,9 +245,9 @@ aside{
    border-top: 0;
 }
 .playlist-footer{
-  margin: 10px;
+  margin: 15px;
 }
-.playlist-footer button{
+.playlist-footer>button{
   padding-left: 15px;
   outline: none;
   border: 1px solid #f2f2f2;
@@ -229,8 +256,26 @@ aside{
   background-repeat: no-repeat;
   background-color: white;
 }
+.playlist-footer button{
+  outline: none;
+  border: 1px solid #f2f2f2;
+  border-radius: 2px;
+  background-color: white;
+}
 .playlist-footer button:hover{
     border: 1px solid #999;
+}
+.visibility-buttons{
+  display: inline-block;
+  vertical-align: middle;
+  opacity:0;
+  transition:opacity 0.1s linear;
+}
+.content-playlists:hover .visibility-buttons{
+  opacity:1;
+}
+.aside-fix{
+  position: fixed;
 }
 .first-cell{
   width:35px;
