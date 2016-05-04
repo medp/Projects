@@ -232,7 +232,8 @@ right:15px;
 .header-playlist span{
   vertical-align: top;
   padding:3px;
-  margin-left:400px;
+  display: inline-block;
+  float:right;
   border-radius: 6px;
   background-color: #f50;
   color: #fff;
