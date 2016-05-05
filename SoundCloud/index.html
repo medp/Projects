@@ -8,34 +8,43 @@
 </head>
 
 <body>
-  <!-- <script type="text/html" id="template">
-       <div data-content="title"></div>
-       <div data-content="description"></div>
-       <img data-src="picture" data-alt="author"/>
-   </script> -->
    <script type="text/html" id="template-playlist">
-     <div class="image-playlist">
-       <a data-href=""><img data-src="picture"/></a>
-     </div>
-     <div class="player">
-       <div class="header-playlist">
-         <input type="image" value="button"src="View/images/PlayButtonSoundcloud.png"/>
-         <div class="text">
-           <h4>Playlist title:</h4>
-           <h2 data-content="title"></h2>
-         </div>
-         <span>Private</span>
+     <div class="content-playlists">
+       <div class="image-playlist">
+         <a data-href=""><img data-src="picture"/></a>
        </div>
-       <div class="elemplaylist-container" id="elements"></div>
+       <div class="player">
+         <div class="header-playlist">
+           <input type="image" value="button"src="View/images/PlayButtonSoundcloud.png"/>
+           <div class="text">
+             <h4>Playlist title:</h4>
+             <h2 data-content="title"></h2>
+           </div>
+           <span>Private</span>
+         </div>
+         <div class="elemplaylist-container" id="elements"></div>
+         <div class="playlist-footer">
+           <button type="button">Share</button>
+           <div class="visibility-buttons">
+             <button type="button"><img style="width:15px; height:15px"src="View/images/delete.png"/></button>
+             <button type="button"><img style="width:15px; height:15px"src="View/images/pencil.png"/></button>
+           </div>
+         </div>
+       </div>
      </div>
    </script>
    <script type="text/html" id="template-song">
      <div class="element-playlist bottom-border">
-       <img data-src="pictureSong"/>
-       <span data-content="index"></span>
-       <span data-content="title">Album</span>
-       <span data-content="songTitle">Piesa</span>
+       <img style="width:25px; height:25px;"data-src="pictureSong"/>
+       <!-- <span data-content="index"></span> -->
+       <!-- <span data-content="title">Album</span> -->
+       <span data-content="songTitle"></span>
        <button type="button"><img style="width:20px; height:20px;"src="View/images/play.png"/></button>
+     </div>
+   </script>
+   <script type="text/html" id="template-vtracks">
+     <div class="bottom-playlist">
+       <span>View n tracks</span>
      </div>
    </script>
   <header>
@@ -90,129 +99,7 @@
         </nav>
         <div class="playlists color-text">
           <p> Hear the latest playlists : </p>
-          <button type="button" onclick="load()">Request data</button>
-
-          <div id="content-playlists"></div>
-
-          <div class="content-playlists">
-            <div class="image-playlist">
-              <a href=""><img src="View/images/dj-killer-mixes.png"/></a>
-            </div>
-            <div class="player">
-              <div class="header-playlist">
-                <input type="image" value="button"src="View/images/PlayButtonSoundcloud.png"/>
-                <div class="text">
-                  <h4>Playlist title:</h4>
-                  <h2>Up all night</h2>
-                </div>
-                <span>Private</span>
-              </div>
-              <div class="elemplaylist-container">
-                <div class="element-playlist bottom-border">
-                  <img src=""/>
-                  <span>1</span>
-                  <span>Album</span>
-                  <span>Piesa</span>
-                  <button type="button"><img style="width:20px; height:20px;"src="View/images/play.png"/></button>
-                </div>
-                <div class="element-playlist bottom-border">
-                  <span>1</span>
-                  <span>Album</span>
-                  <span>Piesa</span>
-                  <button type="button"><img style="width:20px; height:20px;"src="View/images/play.png"/></button>
-                </div>
-                <div class="element-playlist bottom-border">
-                  <span>1</span>
-                  <span>Album</span>
-                  <span>Piesa</span>
-                  <button type="button"><img style="width:20px; height:20px;"src="View/images/play.png"/></button>
-                </div>
-                <div class="element-playlist bottom-border">
-                  <span>1</span>
-                  <span>Album</span>
-                  <span>Piesa</span>
-                  <button type="button"><img style="width:20px; height:20px;"src="View/images/play.png"/></button>
-
-                </div>
-                <div class="element-playlist bottom-border">
-                  <span>1</span>
-                  <span>Album</span>
-                  <span>Piesa</span>
-                  <button type="button"><img style="width:20px; height:20px;"src="View/images/play.png"/></button>
-                </div>
-                <div class="bottom-playlist">
-                  <span>View n tracks</span>
-                </div>
-              </div>
-              <div class="playlist-footer">
-                <button type="button">Share</button>
-                <div class="visibility-buttons">
-                  <button type="button"><img style="width:15px; height:15px"src="View/images/delete.png"/></button>
-                  <button type="button"><img style="width:15px; height:15px"src="View/images/pencil.png"/></button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="content-playlists">
-            <div class="image-playlist">
-              <a href=""><img src="View/images/dj-killer-mixes.png"/></a>
-            </div>
-            <div class="player">
-              <div class="header-playlist">
-                <input type="image" value="button"src="View/images/PlayButtonSoundcloud.png"/>
-                <div class="text">
-                  <h4>Playlist title:</h4>
-                  <h2>Up all night</h2>
-                </div>
-                <span>Private</span>
-              </div>
-              <div class="elemplaylist-container">
-                <div class="element-playlist bottom-border">
-                  <img src=""/>
-                  <span>1</span>
-                  <span>Album</span>
-                  <span>Piesa</span>
-                  <button type="button"><img style="width:20px; height:20px;"src="View/images/play.png"/></button>
-                </div>
-                <div class="element-playlist bottom-border">
-                  <span>1</span>
-                  <span>Album</span>
-                  <span>Piesa</span>
-                  <button type="button"><img style="width:20px; height:20px;"src="View/images/play.png"/></button>
-                </div>
-                <div class="element-playlist bottom-border">
-                  <span>1</span>
-                  <span>Album</span>
-                  <span>Piesa</span>
-                  <button type="button"><img style="width:20px; height:20px;"src="View/images/play.png"/></button>
-
-                </div>
-                <div class="element-playlist bottom-border">
-                  <span>1</span>
-                  <span>Album</span>
-                  <span>Piesa</span>
-                  <button type="button"><img style="width:20px; height:20px;"src="View/images/play.png"/></button>
-
-                </div>
-                <div class="element-playlist bottom-border">
-                  <span>1</span>
-                  <span>Album</span>
-                  <span>Piesa</span>
-                  <button type="button"><img style="width:20px; height:20px;"src="View/images/play.png"/></button>
-                </div>
-                <div class="bottom-playlist">
-                  <span>View n tracks</span>
-                </div>
-              </div>
-              <div class="playlist-footer">
-                <button type="button">Share</button>
-                <div class="visibility-buttons">
-                  <button type="button"><img style="width:15px; height:15px"src="View/images/delete.png"/></button>
-                  <button type="button"><img style="width:15px; height:15px"src="View/images/pencil.png"/></button>
-                </div>
-              </div>
-            </div>
-          </div>
+          <div id="content"></div>
         </div>
       </div>
       <aside class="color-text right">
@@ -282,10 +169,17 @@
       </div>
     </div>
   </footer>
+
   <script src="home.js"></script>
-  <script src="Repo/playAPIreq.js"></script>
+  
+  <script src="Repo/playlistRepository.js"></script>
+
+  <script src="Service/playlistService.js"></script>
+
+  <script src="View/playlistVM.js"></script>
+
   <script src="Business/song.js"></script>
   <script src="Business/playlist.js"></script>
-  <script src="View/playlist.js"></script>
+
 </body>
 </html>

@@ -240,6 +240,7 @@ right:15px;
 }
 .text{
   display: inline-block;
+  width:80%
 }
 .elemplaylist-container{
   border:1px solid #f2f2f2;
@@ -254,6 +255,15 @@ right:15px;
   background-color: white;
   width:30px;
   height: 30px;
+  float:right;
+}
+.element-playlist span{
+  display: inline-block;
+  font-size: 18px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width:80%;
 }
 .element-playlist:hover{
   background-color: rgba(192,192,192,0.2);

@@ -1,4 +1,4 @@
 function Song(data){
-  this.title = data.title;
-  this.pic = data.artwork_url;
+  this.songTitle = data.title;
+  this.pictureSong = data.artwork_url;
 }
