@@ -4,7 +4,7 @@ myApp.service = {};
 myApp.business = {};
 myApp.vm = {};
 
-(function(ctx) {
+(function(ctx,jQ) {
   function init(){
     ctx.service.getPlaylist(
       ctx.vm.playlistVM.display,
@@ -14,7 +14,11 @@ myApp.vm = {};
   }
   // initialize APP
   window.addEventListener('load', init);
-
+  jQ(document).ready(function(){
+    jQ("#drop").click(function(){
+      jQ("#myDropdown").toggle();
+    });
+  });
   // window.onclick = function(event) {
   //   if (!event.target.matches('.dropbtn')) {
   //
@@ -41,4 +45,4 @@ myApp.vm = {};
   // }
 
 
-})(myApp);
+})(myApp,jQuery);

@@ -1,7 +1,8 @@
 
-(function(context) {
+(function(context,jQ) {
   'use strict';
 
+  
   function genericRepository (url, cbSuccess, cbError) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -17,10 +18,11 @@
     xhttp.send();
   };
 
+
   function getPlaylist(cbSuccess, cbError) {
     var url = "https://api.soundcloud.com/playlists?client_id=02gUJC0hH2ct1EGOcYXQIzRFU91c72Ea"
     return genericRepository(url, cbSuccess, cbError);
   }
 
   context.repo.getPlaylist = getPlaylist;
-})(myApp);
+})(myApp,jQuery);
