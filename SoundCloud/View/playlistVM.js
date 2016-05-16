@@ -1,7 +1,7 @@
 (function(ctx){
-
+'use strict'
   function display(array){
-    var l=0;
+    var l = 0;
     $("#content").loadTemplate($("#template-playlist"),array);
     $(".elemplaylist-container").each(function(){
       var dataSong = array[l++].tracks ;

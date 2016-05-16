@@ -1,22 +1,33 @@
-<div class="content-playlists">
+<div class="content-playlists" ng-app="myApp" ng-controller="PlaylistController" >
   <div class="image-playlist">
-    <a data-href=""><img data-src="picture"/></a>
+    <a ng-href=""><img ng-src={{picture}}/></a>
   </div>
   <div class="player">
     <div class="header-playlist">
-      <input type="image" value="button" src="View/images/PlayButtonSoundcloud.png"/>
+      <input type="image" value="button" src="/img/PlayButtonSoundcloud.png"/>
       <div class="text">
         <h4>Playlist title:</h4>
-        <h2 data-content="title"></h2>
+        <h2>{{name}}</h2>
       </div>
       <span>Private</span>
     </div>
-    <div class="elemplaylist-container" id="elements"></div>
+    <div class="elemplaylist-container" id="elements">
+      <div class="element-playlist bottom-border" >
+        <img style="width:25px; height:25px;"data-src="pictureSong"/>
+        <!-- <span data-content="index"></span> -->
+        <!-- <span data-content="title">Album</span> -->
+        <span data-content="songTitle"></span>
+        <button type="button"><img style="width:20px; height:20px;"src="/img/play.png"/></button>
+      </div>
+      <div class="bottom-playlist">
+         <span>View n tracks</span>
+      </div>
+    </div>
     <div class="playlist-footer">
       <button type="button">Share</button>
       <div class="visibility-buttons">
-        <button type="button"><img style="width:15px; height:15px"src="View/images/delete.png"/></button>
-        <button type="button"><img style="width:15px; height:15px"src="View/images/pencil.png"/></button>
+        <button type="button"><img style="width:15px; height:15px"src="/img/delete.png"/></button>
+        <button type="button"><img style="width:15px; height:15px"src="/img/pencil.png"/></button>
       </div>
     </div>
   </div>

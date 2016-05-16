@@ -12,7 +12,7 @@
     function getWithError(data) {
       cbError(data);
     }
-    ctx.repo.genericRepo(getWithSuccess, getWithError);
+    ctx.repo.getPlaylists(getWithSuccess, getWithError);
   }
 
   ctx.service.getPlaylist = getPlaylist;

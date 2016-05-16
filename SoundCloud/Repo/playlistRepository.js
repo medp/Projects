@@ -2,12 +2,12 @@
 (function(context,jQ) {
   'use strict';
 
-  function genericRepo(success,error){
+  function genericRepo(options,success,error){
     return jQ.ajax({
-      url: getUrl(),
-      dataType: "json",
-      type: 'GET',
-      jsonp:false,
+      url: options.url,
+      dataType: options.dataType,
+      type: options.type,
+      jsonp: options.bool,
     })
       .done(function(data) {
         jQ("document").ready(success(data));
@@ -17,13 +17,15 @@
       });
   }
 
-  function getType(){
-    return "GET";
-  }
-  function getUrl(){
-    var url = "https://api.soundcloud.com/playlists?client_id=02gUJC0hH2ct1EGOcYXQIzRFU91c72Ea";
-    return url;
+  function getPlaylists(success,error){
+    var options ={
+     url : "https://api.soundcloud.com/playlists?client_id=02gUJC0hH2ct1EGOcYXQIzRFU91c72Ea",
+     dataType : "json",
+     type: "GET",
+     bool: false
+   }
+    return genericRepo(options,success,error);
   }
 
-  context.repo.genericRepo = genericRepo;
+  context.repo.getPlaylists = getPlaylists;
 })(myApp,jQuery);

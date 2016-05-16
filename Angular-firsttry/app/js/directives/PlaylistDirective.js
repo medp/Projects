@@ -1,7 +1,5 @@
 app.directive('playlistTmpl',function(){
   return{
-    restrict:'A',
-    template:"<div>bla bla </div>",
-
-  }
-})
+    templateUrl:"/templates/playlistTmpl.html"
+  };
+});
