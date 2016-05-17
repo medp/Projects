@@ -1,6 +1,6 @@
   'use strict';
 
-  sfunction Song(data){
+  function Song(data){
     this.songTitle = data.title;
     this.pictureSong = data.artwork_url;
   }
