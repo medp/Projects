@@ -2,14 +2,17 @@
 <html  ng-app="myApp">
 <head>
   <meta charset="utf-8">
-  <!-- <link rel = "stylesheet" type="text/css" href="lib/bootstrap.min.css"> -->
+  <link rel = "stylesheet" type="text/css" href="lib/bootstrap.min.css">
   <link rel = "stylesheet" type="text/css" href="css/page-styling.css">
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
+
 </head>
 
 <body ng-controller="PlaylistController">
-  <header>
+  <div class="container">
+  <div class="page-header">
     <div class="inner-header">
       <div class="header-left">
         <div class="logo-header left">
@@ -18,7 +21,7 @@
         <nav class="menu left">
           <ul id="playlist-bar">
             <li><a href="">Home</a></li>
-            <li><a href="searchYout.html">Collection</a></li>
+            <li><a href="#/test">Collection</a></li>
           </ul>
         </nav>
       </div>
@@ -49,7 +52,7 @@
         </div>
       </div>
     </div>
-  </header>
+  </div>
   <div class="content-wrapper">
     <div class="align-content">
       <div class="left-content">
@@ -62,8 +65,9 @@
         <div class="playlists color-text">
           <p> Hear the latest playlists : </p>
           <div id="content"></div>
+          <playlist-tmpl ng-repeat="p in playlists"></playlist-tmpl>
         </div>
-        <playlist-tmpl  ng-repeat="p in playlists" ></playlist-tmpl>
+
       </div>
       <aside class="color-text right">
         <div class="aside-fix">
@@ -102,6 +106,7 @@
         </div>
       </aside>
     </div>
+        <ng-view></ng-view>
   </div>
   <footer>
     <div class="footer-player">
@@ -131,20 +136,20 @@
         </form>
       </div>
     </div>
+
   </footer>
 
 
-
     <script type="text/javascript" src="lib/bootstrap.min.js"></script>
+
+
     <script type="text/javascript" src="js/app.js"></script>
-    <!-- <script type="text/javascript" src="js/Business/song.js"></script>
-    <script type="text/javascript" src="js/Business/playlist.js"></script> -->
     <script type="text/javascript" src="js/Repo/playlistRepo.js"></script>
     <script type="text/javascript" src="js/controllers/PlaylistController.js"></script>
     <script type="text/javascript" src="js/directives/PlaylistDirective.js"></script>
-
   <!-- <div ng-controller="playlistController">
     {{name}}
   </div> -->
+</div>
 </body>
 </html>

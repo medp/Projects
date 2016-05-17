@@ -1,3 +1,4 @@
+(function(){
 'use strict'
 
 app.factory('playlistService',function(playlistRepo){
@@ -7,5 +8,5 @@ app.factory('playlistService',function(playlistRepo){
           return new Playlist(playlist);
         });
     });
-    // playlistRepo(getWithSuccess,getWithError);
 })
+})();

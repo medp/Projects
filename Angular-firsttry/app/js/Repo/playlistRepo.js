@@ -1,6 +1,8 @@
+
+(function(myApp){
 'use strict';
 
-app.factory('playlistRepo',function($http,$log,$q){
+myApp.factory('playlistRepo',function($http,$log,$q){
   return{
     getData:function(){
       var deferred = $q.defer();
@@ -15,5 +17,5 @@ app.factory('playlistRepo',function($http,$log,$q){
       return deferred.promise;
     }
   }
-
 })
+})(app);
