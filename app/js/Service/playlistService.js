@@ -7,12 +7,13 @@
   servicePlaylist.$inject=['playlistRepo'];
   function servicePlaylist(playlistRepo){
 
-    function dataService(listOfPlaylists){
+    function dataService(){
       return playlistRepo.getData()
                     .then(function(resource){
-                      listOfplaylists = resource.data.map(function(playlist){
+                      var listOfplaylists = resource.data.map(function(playlist){
                                         return new models.Playlist(playlist);
                                       });
+                      return listOfplaylists;
                           });
     }
 
