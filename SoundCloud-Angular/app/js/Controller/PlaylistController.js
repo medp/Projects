@@ -14,12 +14,7 @@
         return servicePlaylist.dataService().then(function(data){
             $scope.playlists = data;
         });
-      // return playlistRepo.getData().then(
-      //   function(data){
-      //     $scope.playlists = data.data.map(function(playlist){
-      //       return new models.Playlist(playlist);
-      //     });
-      //   });
+
     }
   }
 

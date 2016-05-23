@@ -4,13 +4,13 @@
 
 angular.module('myApp').controller('PlaylistController',
   function($scope,$log,playlistRepo){
-   playlistRepo.getData().then(
-     function(data){
-       $scope.playlists = data.map(function(playlist){
-         return new Playlist(playlist);
-       });
-     }
-   );
+    playlistRepo.getData().then(
+      function(data){
+        $scope.playlists = data.map(function(playlist){
+          return new Playlist(playlist);
+        });
+      }
+    );
 
     function Playlist(data){
       this.title = data.title;
@@ -23,5 +23,5 @@ angular.module('myApp').controller('PlaylistController',
       this.songTitle = data.title;
       this.pictureSong = data.artwork_url;
     }
-});
+  });
 })(app);
