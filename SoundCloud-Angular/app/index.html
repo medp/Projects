@@ -10,7 +10,7 @@
 
 </head>
 
-<body ng-controller="PlaylistController">
+<body >
   <div class="container">
   <div class="page-header">
     <div class="inner-header">
@@ -65,7 +65,9 @@
         <div class="playlists color-text">
           <p> Hear the latest playlists : </p>
           <div id="content"></div>
-          <playlist-tmpl ng-repeat="p in playlists"></playlist-tmpl>
+          <!-- <playlist-tmpl ng-repeat="p in playlistSet.playlists"></playlist-tmpl> -->
+          <pp-spinner></pp-spinner>
+          <ng-view></ng-view>
         </div>
 
       </div>
@@ -106,38 +108,9 @@
         </div>
       </aside>
     </div>
-        <ng-view></ng-view>
   </div>
-  <footer>
-    <div class="footer-player">
-      <div class="footer-buttons left">
-        <form>
-          <input type="image" value="button" src="img/back.png"/>
-          <input type="image" value="button" src="img/play.png"/>
-          <input type="image" value="button" src="img/forw.png"/>
-          <input type="image" value="button" src="img/replay.png"/>
-        </form>
-      </div>
-      <div class="progress left">
-        <label></label>
-        <progress value="30" max="300"></progress>
-        <label></label>
-      </div>
-      <div class="volume left">
-        <input type="image" value="button" src="img/vol.png"/>
-      </div>
-      <div class="footer-elem left in-line">
-        <span><a href=""><img style="width:30px;height:30px;"src="img/beats-like-birds.png"/></a><span>
-        <span><a href="">Playing from your stream:</a></br><a href="">Title</a></span>
-      </div>
-      <div class="like-button">
-        <form>
-          <input type="image" value="button" src="img/like.png"/>
-        </form>
-      </div>
-    </div>
+  <footer-player></footer-player>
 
-  </footer>
 
 
     <script type="text/javascript" src="lib/bootstrap.min.js"></script>
@@ -147,8 +120,13 @@
     <script type="text/javascript" src="js/Business/song.js"></script>
     <script type="text/javascript" src="js/Business/playlist.js"></script>
     <script type="text/javascript" src="js/Service/playlistService.js"></script>
+    <script type="text/javascript" src="js/Controller/footerPlayer.controller.js"></script>
+    <script type="text/javascript" src="js/route.js"></script>
     <script type="text/javascript" src="js/Controller/PlaylistController.js"></script>
-    <script type="text/javascript" src="js/View/PlaylistDirective.js"></script>
+    <script type="text/javascript" src="js/Controller/spinner.controller.js"></script>
+
+    <script type="text/javascript" src="js/View/spinner.directive.js"></script>
+    <script type="text/javascript" src="js/View/footerPlayer.directive.js"></script>
   <!-- <div ng-controller="playlistController">
     {{name}}
   </div> -->

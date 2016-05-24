@@ -3,22 +3,20 @@
   var models = angular.module('myApp').models;
   angular.module('myApp').controller('PlaylistController',PlaylistController);
 
-  // PlaylistController.$inject=['playlistRepo','$scope'];
-  PlaylistController.$inject=['servicePlaylist','$scope'];
+  PlaylistController.$inject=['getDataPlaylist'];
 
 
-  function PlaylistController(servicePlaylist,$scope){
-
+  function PlaylistController(getDataPlaylist){
+    var vm = this;
+    vm.isLoading = true;
+    vm.toggle = false;
     activate();
     function activate(){
-        return servicePlaylist.dataService().then(function(data){
-            $scope.playlists = data;
-        });
-
-    }
+        vm.playlists = getDataPlaylist;
+        vm.isLoading = false;
+   }
+    vm.togglePlayer = function(){
+      vm.toggle = true;
+    };
   }
-
 })();
-
-
-// servicePlaylist.dataService(ctrl.playlists);

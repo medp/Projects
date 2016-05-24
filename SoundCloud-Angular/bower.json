@@ -1,0 +1,17 @@
+{
+  "name": "soundcloud-angular",
+  "description": "short desc",
+  "main": "",
+  "authors": [
+    "medeea"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

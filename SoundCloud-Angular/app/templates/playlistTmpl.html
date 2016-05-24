@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<div class="content-playlists" ng-app="myApp" ng-controller="PlaylistController" >
+<div class="content-playlists" ng-repeat="p in playlistSet.playlists"  >
   <div class="image-playlist">
     <a ng-href=""><img ng-src={{p.picture}}/></a>
   </div>
@@ -12,11 +12,9 @@
       </div>
       <span>Private</span>
     </div>
-    <div class="elemplaylist-container" id="elements"  ng-repeat="song in p.tracks track by $index">
-      <div class="element-playlist bottom-border" >
+    <div class="elemplaylist-container" id="elements" ng-controller="footerController as fplayer " ng-repeat="song in p.tracks track by $index">
+      <div  ng-click="fplayer.togglePlayer()" class="element-playlist bottom-border" >
         <img style="width:25px; height:25px;" ng-src="{{song.pictureSong}}"/>
-        <!-- <span data-content="index"></span> -->
-        <!-- <span data-content="title">Album</span> -->
         <span>{{song.songTitle}}</span>
         <button type="button"><img style="width:20px; height:20px;"src="/img/play.png"/></button>
       </div>
