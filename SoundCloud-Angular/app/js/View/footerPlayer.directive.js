@@ -5,8 +5,7 @@ function footerPlayer(){
   var directive = {
     templateUrl: "/templates/footer.html",
     restrict: "EA",
-    controller:"footerController",
-    controllerAs:"fplayer"
+    controller:"footerController"
   };
   return directive;
 }

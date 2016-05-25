@@ -12,47 +12,7 @@
 
 <body >
   <div class="container">
-  <div class="page-header">
-    <div class="inner-header">
-      <div class="header-left">
-        <div class="logo-header left">
-          <a href="" ><img src="img/soundcloud.png"/></a>
-        </div>
-        <nav class="menu left">
-          <ul id="playlist-bar">
-            <li><a href="">Home</a></li>
-            <li><a href="#/test">Collection</a></li>
-          </ul>
-        </nav>
-      </div>
-      <div class="search left">
-        <form>
-          <fieldset class="input-search">
-            <input type="search" class="box" placeholder=" Search"/>
-            <input type="submit" class="btn" value=""/>
-          </fieldset>
-        </form>
-      </div>
-      <div class="header-right">
-        <nav class="navhead-right">
-          <ul>
-            <li><a href="">Upload</a></li>
-            <li><a href="">UserName</a></li>
-            <li><a href=""><img src="img/bell.png"/></a></li>
-            <li><a href=""><img src="img/mail.png"/></a></li>
-          <ul>
-        </nav>
-        <div class="dropdown">
-          <input type="image" value="button" src="img/dots.png" onclick="myFunction()" id="drop" class="dropbtn"/>
-          <div id="myDropdown" class="dropdown-content">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <page-header></page-header>
   <div class="content-wrapper">
     <div class="align-content">
       <div class="left-content">
@@ -69,44 +29,8 @@
           <pp-spinner></pp-spinner>
           <ng-view></ng-view>
         </div>
-
       </div>
-      <aside class="color-text right">
-        <div class="aside-fix">
-          <table class="align-table">
-            <th colspan="2" class="bottom-border"><a href=""><span>Who to follow</span></a></th>
-            <th class="bottom-border"><a href=""><span>Refresh</span></a> </th>
-            <tr>
-              <td class="first-cell"> <div class="circular"></div> </td>
-              <td class="second-cell"><span>Comedy bang bang</span></td>
-              <td class="third-cell"><input type="button" value="Follow"></td>
-            </tr>
-            <tr>
-              <td class="first-cell"> <div class="circular"></div> </td>
-              <td class="second-cell"><span>Comedy bang bang</span></td>
-              <td class="third-cell"><input type="button" value="Follow"></td>
-            </tr>
-            <tr>
-              <td class="first-cell"> <div class="circular"></div> </td>
-              <td class="second-cell"><span>Comedy bang bang</span></td>
-              <td class="third-cell"><input type="button" value="Follow"></td>
-            </tr>
-          </table>
-          <div class="go-mobile bottom-border color-text">
-            <p>Go mobile</p>
-          </div>
-          <div class="nav-mobile bottom-border">
-            <a href=""><img style="width:140px" src="img/app-store.png"/></a>
-            <a href=""><img style="width:140px" src="img/google-play.png"/></a>
-          </div>
-          <div class="aside-footer">
-            <p>
-              <a href="">Legal</a>-<a href="">Privacy</a>-<a href="">Cookies</a>-<a href="">Imprint</a>-<a href="">Popular searches</a></br>
-              <a style="color:blue"href="">Languge:</a><a style="color:#333" href="">English (US)</a>
-            </p>
-          </div>
-        </div>
-      </aside>
+      <aside-cont></aside-cont>
     </div>
   </div>
   <footer-player></footer-player>
@@ -127,6 +51,10 @@
 
     <script type="text/javascript" src="js/View/spinner.directive.js"></script>
     <script type="text/javascript" src="js/View/footerPlayer.directive.js"></script>
+    <script type="text/javascript" src="js/View/aside.directive.js"></script>
+    <script type="text/javascript" src="js/View/header.directive.js"></script>
+    <script type="text/javascript" src="js/View/PlaylistDirective.js"></script>
+    <script type="text/javascript" src="js/View/song-element.directive.js"></script>
   <!-- <div ng-controller="playlistController">
     {{name}}
   </div> -->

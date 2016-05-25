@@ -19,15 +19,16 @@ module.exports = function(grunt) {
     },
     karma: {
       unit: {
+        configFile:'karma.conf.js',
         options: {
           frameworks: ['jasmine'],
-          singleRun: true,
-          browsers: ['Chrome'],
-          files: [
-            'public/components/angular/angular.js',
-            'public/components/angular-mocks/angular-mocks.js',
-            'src/js/**/*.js'
-          ]
+          // singleRun: true,
+          // browsers: ['Chrome'],
+          // files: [
+          //   'public/components/angular/angular.js',
+          //   'public/components/angular-mocks/angular-mocks.js',
+          //   'src/js/**/*.js'
+          // ]
         }
       }
     }
@@ -36,6 +37,7 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-karma');
 
   grunt.registerTask('default', ['uglify']);
 

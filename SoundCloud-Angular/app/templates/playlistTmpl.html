@@ -1,33 +1,3 @@
-<!DOCTYPE html>
-<div class="content-playlists" ng-repeat="p in playlistSet.playlists"  >
-  <div class="image-playlist">
-    <a ng-href=""><img ng-src={{p.picture}}/></a>
-  </div>
-  <div class="player">
-    <div class="header-playlist">
-      <input type="image" value="button" src="/img/PlayButtonSoundcloud.png"/>
-      <div class="text">
-        <h4>Playlist title:</h4>
-        <h2>{{p.title}}</h2>
-      </div>
-      <span>Private</span>
-    </div>
-    <div class="elemplaylist-container" id="elements" ng-controller="footerController as fplayer " ng-repeat="song in p.tracks track by $index">
-      <div  ng-click="fplayer.togglePlayer()" class="element-playlist bottom-border" >
-        <img style="width:25px; height:25px;" ng-src="{{song.pictureSong}}"/>
-        <span>{{song.songTitle}}</span>
-        <button type="button"><img style="width:20px; height:20px;"src="/img/play.png"/></button>
-      </div>
-    </div>
-    <div class="bottom-playlist">
-       <span>View n tracks</span>
-    </div>
-    <div class="playlist-footer">
-      <button type="button">Share</button>
-      <div class="visibility-buttons">
-        <button type="button"><img style="width:15px; height:15px"src="/img/delete.png"/></button>
-        <button type="button"><img style="width:15px; height:15px"src="/img/pencil.png"/></button>
-      </div>
-    </div>
-  </div>
+<div class="content-playlists" ng-repeat="p in playlistCtrl.playlists"  >
+  <mp-play-list ></mp-play-list>
 </div>

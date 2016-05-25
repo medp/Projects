@@ -3,7 +3,8 @@
 
   angular.module('myApp').controller('SpinnerController',spinnerController);
 
-    function spinnerController(){
-          this.isLoading = true;
-      }
+  spinnerController.$inject=['$rootScope'];
+    function spinnerController($rootScope){
+      $rootScope.$on('Loaded',function(){$rootScope.isLoading=true;});
+    }
 })();

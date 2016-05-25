@@ -3,20 +3,35 @@
   var models = angular.module('myApp').models;
   angular.module('myApp').controller('PlaylistController',PlaylistController);
 
-  PlaylistController.$inject=['getDataPlaylist'];
+  PlaylistController.$inject=['getDataPlaylist','$rootScope'];
 
 
-  function PlaylistController(getDataPlaylist){
+  function PlaylistController(getDataPlaylist,$rootScope){
     var vm = this;
-    vm.isLoading = true;
-    vm.toggle = false;
+    vm.trackLimit = 5;
+    vm.showTracks = showTracks;
+
     activate();
     function activate(){
         vm.playlists = getDataPlaylist;
-        vm.isLoading = false;
+        vm.playlists.map(function(data){
+            data.trackLimit = 5;
+            data.show = true;
+            data.toggle = false;
+            return data;
+        })
+        $rootScope.$emit('Loaded');
    }
-    vm.togglePlayer = function(){
-      vm.toggle = true;
-    };
+
+   function showTracks(p){
+      if(p.trackLimit===5) {
+        p.trackLimit= p.tracks.length;
+        p.show = false;
+      }else{
+        p.trackLimit = 5;
+        p.show = true;
+      }
+    }
+
   }
 })();

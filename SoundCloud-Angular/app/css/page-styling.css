@@ -174,9 +174,10 @@ right:15px;
 
 .content-wrapper{
   background-color: #fff;
-  height: 100%;
+  min-height: 500px;
   width: 1300px;
   margin: 50px auto;
+
 
 }
 .align-content{
@@ -252,6 +253,7 @@ right:15px;
   margin:0;
   height:30px;
   border:0;
+  cursor: pointer;
 }
 .element-playlist button{
   outline: none;
@@ -275,7 +277,8 @@ right:15px;
 .bottom-playlist{
    text-align: center;
    background-color: rgba(192,192,192,0.2);
-    border-top: 1px dotted #333;
+   border-top: 1px dotted #333;
+   cursor: pointer;
 }
 .bottom-playlist:hover{
    border-top: 0;

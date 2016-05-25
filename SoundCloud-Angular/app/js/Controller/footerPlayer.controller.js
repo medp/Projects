@@ -3,11 +3,11 @@
 
   angular.module('myApp').controller('footerController',footerController);
 
-    function footerController(){
-      var vf = this;
-      vf.toggle = false;
-      vf.togglePlayer = function(){
-        vf.toggle = true;
+    footerController.$inject = ['$rootScope'];
+    function footerController($rootScope){
+      $rootScope.toggle = false;
+      $rootScope.togglePlayer = function(){
+        $rootScope.toggle = $rootScope.toggle === true ? false : true;
       };
     }
 })();

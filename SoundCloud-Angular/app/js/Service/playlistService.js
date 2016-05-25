@@ -9,7 +9,7 @@
 
     function dataService(){
       return playlistRepo.getData()
-                    .then(function(resource){
+              .then(function(resource){
                       var listOfplaylists = resource.data.map(function(playlist){
                                         return new models.Playlist(playlist);
                                       });

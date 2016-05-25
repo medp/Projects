@@ -1,9 +1,9 @@
 (function(){
-angular.module('myApp').directive('playlistTmpl', playlistTmpl);
+angular.module('myApp').directive('mpPlayList', playlistTmpl);
 
 function playlistTmpl(){
   var directive = {
-    templateUrl: "/templates/playlistTmpl.html",
+    templateUrl: "/templates/dataPlaylist.html",
     restrict: "EA"
   };
   return directive;
