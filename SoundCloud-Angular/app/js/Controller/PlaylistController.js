@@ -3,17 +3,18 @@
   var models = angular.module('myApp').models;
   angular.module('myApp').controller('PlaylistController',PlaylistController);
 
-  PlaylistController.$inject=['getDataPlaylist','$rootScope'];
+  PlaylistController.$inject=['playlistData','$rootScope','$scope'];
 
 
-  function PlaylistController(getDataPlaylist,$rootScope){
+  function PlaylistController(playlistData, $rootScope, $scope){
     var vm = this;
     vm.trackLimit = 5;
     vm.showTracks = showTracks;
+    $scope.value = true;
 
     activate();
     function activate(){
-        vm.playlists = getDataPlaylist;
+        vm.playlists = playlistData;
         vm.playlists.map(function(data){
             data.trackLimit = 5;
             data.show = true;
