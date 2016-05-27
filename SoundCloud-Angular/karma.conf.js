@@ -3,7 +3,7 @@
 /*jslint sloppy: true */
 /*global module*/
 
-module.exports = function (config) {
+module.exports = function(config) {
     config.set({
 
         // base path, that will be used to resolve files and exclude
@@ -105,11 +105,16 @@ module.exports = function (config) {
 
         // tell karma how you want the coverage results
         coverageReporter: {
-            reporters: [
-                {type: 'html', dir: 'reports_js_webclient/coverage/html'},
-                {type: 'lcovonly', dir: 'reports_js_webclient/coverage'},
-                {type: 'cobertura', dir: 'reports_js_webclient/coverage'}
-            ]
+            reporters: [{
+                type: 'html',
+                dir: 'reports_js_webclient/coverage/html'
+            }, {
+                type: 'lcovonly',
+                dir: 'reports_js_webclient/coverage'
+            }, {
+                type: 'cobertura',
+                dir: 'reports_js_webclient/coverage'
+            }]
         },
 
         htmlReporter: {
