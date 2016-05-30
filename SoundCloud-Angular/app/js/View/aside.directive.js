@@ -3,7 +3,7 @@
 
     function asideCont() {
         var directive = {
-            templateUrl: "/templates/aside.html",
+            templateUrl: "templates/aside.html",
             restrict: "EA"
         };
         return directive;

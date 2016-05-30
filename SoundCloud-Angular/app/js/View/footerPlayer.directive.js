@@ -3,7 +3,7 @@
 
     function footerPlayer() {
         var directive = {
-            templateUrl: "/templates/footer.html",
+            templateUrl: "templates/footer.html",
             restrict: "EA",
             controller: "footerController"
         };

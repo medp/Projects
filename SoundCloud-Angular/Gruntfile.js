@@ -52,15 +52,21 @@ module.exports = function(grunt) {
                     ]
                 }]
             },
+        },
+        html2js: {
+            main: {
+                src: ['app/templates/*.html'],
+                dest: 'tmp/templates.js'
+            }
         }
-
     });
 
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-karma');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-html2js');
 
-    grunt.registerTask('default', ['uglify', 'copy:dist']);
+    grunt.registerTask('default', ['uglify', 'copy:dist', 'html2js:main']);
 
 };

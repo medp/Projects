@@ -3,7 +3,7 @@
 
     function ppSpinner() {
         var directive = {
-            templateUrl: "/templates/spinner.html",
+            templateUrl: "templates/spinner.html",
             restrict: "EA",
             controller: "SpinnerController",
         };

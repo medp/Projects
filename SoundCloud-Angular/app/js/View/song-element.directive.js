@@ -3,7 +3,7 @@
 
     function songCont() {
         var directive = {
-            templateUrl: "/templates/songTemplate.html",
+            templateUrl: "templates/songTemplate.html",
             restrict: "EA"
         };
         return directive;

@@ -3,7 +3,7 @@
 
     function playlistTmpl() {
         var directive = {
-            templateUrl: "/templates/dataPlaylist.html",
+            templateUrl: "templates/dataPlaylist.html",
             restrict: "EA"
         };
         return directive;

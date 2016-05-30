@@ -3,7 +3,7 @@
 
     function pageHeader() {
         var directive = {
-            templateUrl: "/templates/page-header.html",
+            templateUrl: "templates/page-header.html",
             restrict: "EA"
         };
         return directive;

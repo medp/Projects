@@ -23,6 +23,7 @@ module.exports = function(config) {
             'SoundCloud-Angular/bower_components/angular-route/angular-route.js',
 
 
+
             //App-specific Code
             'SoundCloud-Angular/app/js/*.js',
             'SoundCloud-Angular/app/js/Business/*.js',
@@ -33,7 +34,8 @@ module.exports = function(config) {
 
 
             //test filesremove any loaders after the server call
-            'SoundCloud-Angular/app/test/*.js'
+            'SoundCloud-Angular/app/test/*.js',
+            'SoundCloud-Angular/app/templates/*.html',
         ],
 
 
@@ -86,6 +88,7 @@ module.exports = function(config) {
             'app/js/Service/*.js': 'coverage',
             'app/js/View/*.js': 'coverage',
             'app/js/Controller/*.js': 'coverage',
+            'app/**/*.html': ['ng-html2js']
         },
 
         //plugins
@@ -95,7 +98,9 @@ module.exports = function(config) {
             'karma-phantomjs-launcher',
             'karma-html-reporter',
             'karma-junit-reporter',
-            'karma-chrome-launcher'
+            'karma-chrome-launcher',
+            'karma-script-launcher',
+            'karma-ng-html2js-preprocessor'
         ],
 
 
@@ -125,6 +130,14 @@ module.exports = function(config) {
         junitReporter: {
             outputDir: '/reports_js_webclient',
             outputFile: '/reports_js_webclient/jasmine-results.xml'
+        },
+
+        ngHtml2JsPreprocessor: {
+            // If your build process changes the path to your templates,
+            // use stripPrefix and prependPrefix to adjust it.
+            // stripPrefix: "SoundCloud-Angular/app/",
+            // stripPrefix:"app/",
+            moduleName: "templates"
         }
     });
 };
