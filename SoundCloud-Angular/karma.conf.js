@@ -81,14 +81,14 @@ module.exports = function(config) {
         singleRun: false,
 
         preprocessors: {
-            'app/js/app.js': 'coverage',
-            'app/js/route.js': 'coverage',
-            'app/js/Business/*.js': 'coverage',
-            'app/js/Repo/*.js': 'coverage',
-            'app/js/Service/*.js': 'coverage',
-            'app/js/View/*.js': 'coverage',
-            'app/js/Controller/*.js': 'coverage',
-            'app/**/*.html': ['ng-html2js']
+            'SoundCloud-Angular/app/js/app.js': 'coverage',
+            'SoundCloud-Angular/app/js/route.js': 'coverage',
+            'SoundCloud-Angular/app/js/Business/*.js': 'coverage',
+            'SoundCloud-Angular/app/js/Repo/*.js': 'coverage',
+            'SoundCloud-Angular/app/js/Service/*.js': 'coverage',
+            'SoundCloud-Angular/app/js/View/*.js': 'coverage',
+            'SoundCloud-Angular/app/js/Controller/*.js': 'coverage',
+            'SoundCloud-Angular/app/templates/*.html': ['ng-html2js']
         },
 
         //plugins
@@ -136,7 +136,7 @@ module.exports = function(config) {
             // If your build process changes the path to your templates,
             // use stripPrefix and prependPrefix to adjust it.
             // stripPrefix: "SoundCloud-Angular/app/",
-            // stripPrefix:"app/",
+            stripPrefix:"SoundCloud-Angular/app/",
             moduleName: "templates"
         }
     });

@@ -67,6 +67,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-html2js');
 
-    grunt.registerTask('default', ['uglify', 'copy:dist', 'html2js:main']);
+    grunt.registerTask('default', ['uglify', 'copy:dist']);
+    // 'html2js:main'
 
 };

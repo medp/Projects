@@ -6,6 +6,7 @@
             templateUrl: "templates/spinner.html",
             restrict: "EA",
             controller: "SpinnerController",
+            controllerAs: "spinner"
         };
         return directive;
     }

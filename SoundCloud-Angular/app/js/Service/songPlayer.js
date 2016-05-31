@@ -2,24 +2,24 @@
     'use strict';
 
 
-    angular.module('myApp').factory('servicePlaylist', servicePlaylist);
+    angular.module('myApp').factory('serviceSong', serviceSong);
 
-    servicePlaylist.$inject = ['playlistRepo'];
+    servicePlaylist.$inject = ['servicePlaylist'];
 
-    function servicePlaylist(playlistRepo) {
+    function serviceSong(servicePlaylist) {
 
-        function dataService() {
-            return playlistRepo.getData()
-                .then(function(resource) {
-                    var listOfplaylists = resource.data.map(function(playlist) {
-                        return new models.Playlist(playlist);
+        function getSongs() {
+            return servicePlaylist.dataService()
+                .then(function(data) {
+                    var listOfSongs = data.map(function(playlist) {
+                        return playlist.tracks;
                     });
-                    return listOfplaylists;
+                    return listOfSongs;
                 });
         }
 
         return {
-            dataService: dataService
+            getSongs: getSongs
         };
     }
 })();
