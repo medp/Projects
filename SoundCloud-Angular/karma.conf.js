@@ -34,6 +34,7 @@ module.exports = function(config) {
 
 
             //test filesremove any loaders after the server call
+            'SoundCloud-Angular/app/test/**/*.js',
             'SoundCloud-Angular/app/test/*.js',
             'SoundCloud-Angular/app/templates/*.html',
         ],

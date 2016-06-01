@@ -14,19 +14,12 @@ describe("Should test directive", function() {
     it('Replaces the element with the appropriate content', function() {
         // expect(true).toBe(true);
         // Compile a piece of HTML containing the directive
-        var element = $compile("<pp-spinner></pp-spinner>")($rootScope);
+        var element = $compile("<page-header></page-header>")($rootScope);
         // // fire all the watches, so the scope expression {{1 + 1}} will be evaluated
         $rootScope.$digest();
         // // Check that the compiled element contains the templated content
-        expect(element.html()).toContain("Loading...");
+        // expect(element.html()).toContain("Loading...");
     });
-    //
-    // describe("The song element directive", function() {
-    //     var element = $compile("<song-el></song-el>")($rootScope);
-    //     $rootScope.$digest();
-    //     // it("should ", function() {
-    //     //
-    //     // });
-    // });
+
 
 });

@@ -4,7 +4,7 @@
 
     angular.module('myApp').factory('serviceSong', serviceSong);
 
-    servicePlaylist.$inject = ['servicePlaylist'];
+    serviceSong.$inject = ['servicePlaylist'];
 
     function serviceSong(servicePlaylist) {
 
@@ -17,7 +17,6 @@
                     return listOfSongs;
                 });
         }
-
         return {
             getSongs: getSongs
         };

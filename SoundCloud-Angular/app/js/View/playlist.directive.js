@@ -6,6 +6,7 @@
             templateUrl: "templates/dataPlaylist.html",
             restrict: "EA"
             // controller: "PlaylistController",
+            // controllerAs: "playlistCtrl"
             // scope:{
             //   playlist: "="
             // }
