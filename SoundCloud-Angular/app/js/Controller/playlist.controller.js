@@ -1,16 +1,16 @@
 (function() {
     'use strict';
-    var models = angular.module('myApp').models;
+
     angular.module('myApp').controller('PlaylistController', PlaylistController);
 
-    PlaylistController.$inject = ['playlistData', '$rootScope'];
+    PlaylistController.$inject = ['playlistData'];
 
 
-    function PlaylistController(playlistData, $rootScope) {
+    function PlaylistController(playlistData) {
         var vm = this;
         vm.trackLimit = 5;
         vm.showTracks = showTracks;
-
+        vm.remove = remove;
         activate();
 
         function activate() {
@@ -21,7 +21,6 @@
                 data.toggle = false;
                 return data;
             })
-            $rootScope.$emit('Loaded');
         }
 
         function showTracks(p) {
@@ -34,5 +33,9 @@
             }
         }
 
+        function remove(index) {
+            vm.playlists.splice(index, 1); //remove
+        }
+        return vm;
     }
 })();

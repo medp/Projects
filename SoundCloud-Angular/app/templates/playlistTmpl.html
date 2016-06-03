@@ -1,3 +1,8 @@
-<div class="content-playlists" >
-    <mp-play-list></mp-play-list>
+<div class="playlists color-text">
+    <p> Hear the latest playlists : </p>
+    <div id="content"></div>
+    <!-- <playlist-tmpl ng-repeat="p in playlistSet.playlists"></playlist-tmpl> -->
+    <div class="content-playlists" >
+        <mp-play-list playlist="vm.playlists" removeEvent="functieDePeController"></mp-play-list>
+    </div>
 </div>

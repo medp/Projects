@@ -9,25 +9,9 @@ beforeEach(module('myApp'));
 //   });
 // });
 
-
-
-describe("test controller", function() {
-    beforeEach(inject(function($controller, $rootScope) {
-        scope = $rootScope.$new();
-        _playlistData = [];
-        $controller('PlaylistController as vm', {
-            $scope: scope,
-            playlistData: _playlistData
-        });
-    }));
-    it("Add gives the correct result", function() {
-        expect(scope.vm.trackLimit).toBe(5);
-    });
-});
-
-describe("test service", function() {
-    it('should return', inject(function(playlistRepo) {
-        expect(3).toBe(3);
-    }));
-
-})
+// describe("test service", function() {
+//     it('should return', inject(function(playlistRepo) {
+//         expect(3).toBe(3);
+//     }));
+//
+// })

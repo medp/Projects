@@ -15,10 +15,4 @@ describe("test repository",function(){
         var verif = service.dataService();
         expect(service.dataService).toHaveBeenCalled();
     });
-    // it("should set the listOfplaylists",function(){
-    //     var verif = service.dataService();
-    //     // verif.then(function(response){
-    //
-    //     });
-    // });
 });

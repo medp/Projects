@@ -1,15 +1,19 @@
  (function() {
-    angular.module('myApp').directive('mpPlayList', playlistTmpl);
+    angular.module('myApp').directive('mpPlayList', mpPlayList);
 
-    function playlistTmpl() {
+    function mpPlayList() {
         var directive = {
             templateUrl: "templates/dataPlaylist.html",
-            restrict: "EA"
+            restrict: "EA",
             // controller: "PlaylistController",
             // controllerAs: "playlistCtrl"
-            // scope:{
-            //   playlist: "="
-            // }
+            scope: {
+              playlist: "=",
+              removeEvent: "&"
+            },
+            link: function(scope, element, attrs, controller) {
+              console.log(scope.playlist);
+            }
         };
         return directive;
     };

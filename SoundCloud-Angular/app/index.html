@@ -23,21 +23,16 @@
                             <li><a href="#c">Charts</a></li>
                         </ul>
                     </nav>
-                    <div class="playlists color-text">
-                        <p> Hear the latest playlists : </p>
-                        <div id="content"></div>
-                        <!-- <playlist-tmpl ng-repeat="p in playlistSet.playlists"></playlist-tmpl> -->
-                        <pp-spinner></pp-spinner>
-                        <ng-view></ng-view>
-                    </div>
+
+                    <pp-spinner></pp-spinner>
+
+                    <ng-view></ng-view>
+
                 </div>
                 <aside-cont></aside-cont>
             </div>
         </div>
         <footer-player></footer-player>
-
-
-
         <script type="text/javascript" src="lib/bootstrap.min.js"></script>
 
         <script type="text/javascript" src="js/app.js"></script>
@@ -56,6 +51,7 @@
         <script type="text/javascript" src="js/View/footerPlayer.directive.js"></script>
         <script type="text/javascript" src="js/View/aside.directive.js"></script>
         <script type="text/javascript" src="js/View/header.directive.js"></script>
+        <script type="text/javascript" src="js/View/search-input.directive.js"></script>
         <script type="text/javascript" src="js/View/playlist.directive.js"></script>
         <script type="text/javascript" src="js/View/song-element.directive.js"></script>
         <!-- <div ng-controller="playlistController">

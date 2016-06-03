@@ -1,10 +1,10 @@
 (function() {
     'use strict'
     angular.module('myApp').config(function($routeProvider) {
-        $routeProvider.when('/playlist', {
+        $routeProvider.when('/', {
             templateUrl: "templates/playlistTmpl.html",
             controller: "PlaylistController",
-            controllerAs: "playlistCtrl",
+            controllerAs: "vm",
             resolve: {
                 playlistData: function(servicePlaylist) {
                     return servicePlaylist.dataService();
@@ -12,7 +12,7 @@
             }
         });
         $routeProvider.otherwise({
-            redirectTo: '/playlist'
+            redirectTo: '/'
         });
     });
 })();

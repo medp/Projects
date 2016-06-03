@@ -30,7 +30,7 @@ describe("Playlist directive test", function() {
 
     function getCompiledElem() {
         // Compile a piece of HTML containing the direct
-        var element = $compile('<mpay></mp-play>')($rootScope);
+        var element = $compile('<mp-play></mp-play>')($rootScope);
         // // fire all the watches, so the scope expression {{1 + 1}} will be evaluated
         $rootScope.$digest();
         return element;

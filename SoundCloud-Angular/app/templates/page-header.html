@@ -11,14 +11,7 @@
                 </ul>
             </nav>
         </div>
-        <div class="search left">
-            <form>
-                <fieldset class="input-search">
-                    <input type="search" class="box" placeholder=" Search" />
-                    <input type="submit" class="btn" value="" />
-                </fieldset>
-            </form>
-        </div>
+        <search-inp></search-inp>
         <div class="header-right">
             <nav class="navhead-right">
                 <ul>
@@ -33,7 +26,7 @@
                 </ul>
             </nav>
             <div class="dropdown">
-                <input type="image" value="button" src="img/dots.png" onclick="myFunction()" id="drop" class="dropbtn" />
+                <input type="image" value="button" src="img/dots.png" ng-click="myFunction()" id="drop" class="dropbtn" />
                 <div id="myDropdown" class="dropdown-content">
                     <a href="#">Link 1</a>
                     <a href="#">Link 2</a>

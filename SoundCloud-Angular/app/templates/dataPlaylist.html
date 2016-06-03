@@ -1,4 +1,4 @@
-<div ng-repeat="p in playlistCtrl.playlists" >
+<div ng-repeat="p in playlists | filter: search :strict" >
     <div class="image-playlist">
         <a ng-href=""><img ng-src={{p.picture}}/></a>
     </div>
@@ -13,7 +13,11 @@
             <span>Private</span>
         </div>
         <!-- {{p}} -->
-        <song-el index="{{$index}}" songs="{{playlistCtrl.playlists[$index].tracks}}"></song-el>
+
+        <song-el index="{{$index}}" songs="{p.tracks}}"></song-el>
+
+
+
         <div class="bottom-playlist" ng-click="playlistCtrl.showTracks(p)" ng-if="p.tracks.length > 5 ">
             <span ng-show="p.show">View {{p.tracks.length}} tracks</span>
             <span ng-hide="p.show">View fewer tracks</span>
@@ -21,7 +25,7 @@
         <div class="playlist-footer">
             <button type="button">Share</button>
             <div class="visibility-buttons">
-                <button type="button"><img style="width:15px; height:15px" src="/img/delete.png" /></button>
+                <button type="submit" ng-click="playlistCtrl.remove($index)"><img style="width:15px; height:15px" src="/img/delete.png" /></button>
                 <button type="button"><img style="width:15px; height:15px" src="/img/pencil.png" /></button>
             </div>
         </div>
