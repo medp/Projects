@@ -1,0 +1,32 @@
+<div ng-repeat="p in playlist | orderBy: 'title' ">
+    <div ng-class="$index" class="image-playlist">
+        <a ng-href=""><img ng-src={{p.picture}}/></a>
+    </div>
+    <div class="player">
+        <div class="header-playlist">
+            <input type="image" value="button" src="/img/PlayButtonSoundcloud.png" />
+            <div class="text">
+                <h4>Playlist title:</h4>
+                <h2>{{p.title}}</h2>
+
+            </div>
+            <span>Private</span>
+        </div>
+        <!-- {{p}} -->
+
+        <song-el limit="mpControl.trackLimits[$index] || mpControl.trackLimit" songs="p.tracks" ></song-el>
+
+        <div class="bottom-playlist" ng-click="mpControl.showTracks(p.tracks.length,$index)" ng-if="p.tracks.length > 5 "> <!--"mpControl.showTracks(p.tracks.length)"-->
+            <span ng-hide="mpControl.trackLimits[$index] || mpControl.trackLimit !== 5 ">View {{p.tracks.length}} tracks</span>
+            <span ng-show="mpControl.trackLimits[$index] || mpControl.trackLimit !== 5 ">View fewer tracks</span>
+        </div>
+        <div class="playlist-footer">
+            <button type="button">Share</button>
+            <div class="visibility-buttons">
+                <button type="button" ng-click="playlist.splice($index,1)"><img style="width:15px; height:15px" src="/img/delete.png" /></button>
+                <button type="button"><img style="width:15px; height:15px" src="/img/pencil.png" /></button>
+            </div>
+        </div>
+
+    </div>
+</div>

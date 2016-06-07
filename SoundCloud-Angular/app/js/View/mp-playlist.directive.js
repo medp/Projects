@@ -3,10 +3,10 @@
 
     function mpPlayList() {
         var directive = {
-            templateUrl: "templates/dataPlaylist.html",
+            templateUrl: "templates/mp-playlist.html",
             restrict: "EA",
-            // controller: "PlaylistController",
-            // controllerAs: "playlistCtrl"
+            controller:"MpPlaylistController",
+            controllerAs: 'mpControl',
             scope: {
               playlist: "=",
               removeEvent: "&"

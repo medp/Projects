@@ -1,7 +1,7 @@
 (function() {
-    angular.module('myApp').directive('asideCont', asideCont);
+    angular.module('myApp').directive('asideContent', asideContent);
 
-    function asideCont() {
+    function asideContent() {
         var directive = {
             templateUrl: "templates/aside.html",
             restrict: "EA"

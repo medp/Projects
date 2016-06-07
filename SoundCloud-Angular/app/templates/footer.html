@@ -1,4 +1,4 @@
-<footer ng-if="toggle">
+<footer ng-if="show" >
     <div class="footer-player">
         <div class="footer-buttons left">
             <form>
@@ -17,8 +17,8 @@
             <input type="image" value="button" src="img/vol.png" />
         </div>
         <div class="footer-elem left in-line">
-            <span><a href=""><img style="width:30px;height:30px;"src="img/beats-like-birds.png"/></a><span>
-      <span><a href="">Playing from your stream:</a></br><a href="">Title</a></span>
+            <span><a href=""><img style="width:30px;height:30px;" ng-src="{{song.pictureSong}}"/></a><span>
+      <span><a href="">Playing from your stream:</a></br><a href="">{{song.songTitle}}</a></span>
         </div>
         <div class="like-button">
             <form>

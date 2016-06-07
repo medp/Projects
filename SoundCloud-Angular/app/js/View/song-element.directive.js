@@ -6,19 +6,15 @@
             restrict: "EA",
             controller: "SongController",
             controllerAs: "SongCtrl",
-            bindToController: true,
+            // bindToController: true,
             scope:{
-              myIndex: '=',
-              mySongs: '='
+              limit: '=',
+              songs: '='
             },
-            templateUrl: "templates/songTemplate.html",
+            templateUrl: "templates/song-element.html",
              link: function(scope, element, attrs){
-               //console.log('test', attrs.index);
-
-               scope.myIndex = attrs.index;
-               scope.mySongs = attrs.songs;
-              //  console.log('test2', scope.myIndex);
-              //  console.log('test songs ', scope.mySongs );
+               console.log('test songs ', scope.songs );
+               console.log('bla', scope.limit);
              }
 
         };

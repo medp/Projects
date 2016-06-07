@@ -2,7 +2,7 @@
     'use strict'
     angular.module('myApp').config(function($routeProvider) {
         $routeProvider.when('/', {
-            templateUrl: "templates/playlistTmpl.html",
+            templateUrl: "templates/playlists-template.html",
             controller: "PlaylistController",
             controllerAs: "vm",
             resolve: {

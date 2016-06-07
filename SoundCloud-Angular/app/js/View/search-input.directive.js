@@ -1,12 +1,10 @@
 (function() {
-    angular.module('myApp').directive('searchInp', searchInp);
+    angular.module('myApp').directive('searchInput', searchInput);
 
-    function searchInp() {
+    function searchInput() {
         var directive = {
             templateUrl: "templates/search-input.html",
-            restrict: "EA",
-            // controller: "SpinnerController",
-            // controllerAs: "spinner"
+            restrict: "EA"
         };
         return directive;
     }
