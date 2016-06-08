@@ -15,7 +15,7 @@ describe("Song", function() {
             title: "Song3",
             artwork_url: "img/mail.png"
         }]
-      })
+    })
     it("should be defined", function() {
         var s = new app.Song(tracks[1]);
         expect(s).toBeDefined();

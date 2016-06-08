@@ -1,8 +1,8 @@
 <div class="elemplaylist-container" id="elements" ng-repeat="song in songs|limitTo : limit ">
-    <div ng-click="SongCtrl.togglePlayer()" class="element-playlist bottom-border">
+    <div ng-click="SongCtrl.togglePlayer(song)" class="element-playlist bottom-border">
         <img style="width:25px; height:25px;" ng-src="{{song.pictureSong}}" />
         <span>{{song.songTitle}}</span>
         <button type="button"><img style="width:20px; height:20px;" src="/img/play.png" /></button>
     </div>
-    <footer-player show="SongCtrl.show" song="song"></footer-player>
+    <footer-player show="SongCtrl.show" song="vm.song"></footer-player>
 </div>

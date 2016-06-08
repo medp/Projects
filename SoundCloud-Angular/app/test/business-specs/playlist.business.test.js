@@ -25,12 +25,11 @@ describe("Playlist ", function() {
                 title: "Song1",
                 artwork_url: "img/mail.png"
             }]
-        },{
-          title: "Playlist3",
-          picture:"",
-          tracks:[]
-        }
-      ];
+        }, {
+            title: "Playlist3",
+            picture: "",
+            tracks: []
+        }];
     })
     it("should be defined", function() {
         var p = new app.Playlist(playlists[1]);

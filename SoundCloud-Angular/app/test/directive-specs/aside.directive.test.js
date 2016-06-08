@@ -17,7 +17,7 @@ describe("Aside directive test", function() {
 
     function getCompiledElem() {
         // Compile a piece of HTML containing the directive
-        var element = $compile("<aside-cont></aside-cont>")($rootScope);
+        var element = $compile("<aside-content></aside-content>")($rootScope);
         // // fire all the watches, so the scope expression {{1 + 1}} will be evaluated
         $rootScope.$digest();
         return element;

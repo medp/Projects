@@ -13,7 +13,7 @@ describe("test controller", function() {
 
     }));
     it('should respond to the resource loaded event', function() {
-       rootScope.$emit('Loaded');
-       expect(rootScope.isLoading).toBeTruthy();
-    } )
+        rootScope.$emit('Loaded');
+        expect(rootScope.isLoading).toBeTruthy();
+    })
 });

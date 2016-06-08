@@ -2,16 +2,16 @@
 
 beforeEach(module('myApp'));
 
-describe("test repository",function(){
-    var repo,service,httpBackend,q;
-    beforeEach(inject(function(playlistRepo,servicePlaylist,$httpBackend,$q){
-      service = servicePlaylist;
-      repo = playlistRepo;
-      httpBackend = $httpBackend;
-      q = $q.defer();
-      spyOn(service,"dataService");
+describe("test repository", function() {
+    var repo, service, httpBackend, q;
+    beforeEach(inject(function(playlistRepo, servicePlaylist, $httpBackend, $q) {
+        service = servicePlaylist;
+        repo = playlistRepo;
+        httpBackend = $httpBackend;
+        q = $q.defer();
+        spyOn(service, "dataService");
     }));
-    it("should call getData function from repo",function(){
+    it("should call getData function from repo", function() {
         var verif = service.dataService();
         expect(service.dataService).toHaveBeenCalled();
     });

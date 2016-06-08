@@ -3,13 +3,18 @@
 
     angular.module('myApp').controller('footerController', footerController);
 
-    footerController.$inject = ['$rootScope'];
+    footerController.$inject = ['serviceShareSong'];
 
-    function footerController($rootScope) {
+    function footerController(serviceShareSong) {
         var fm = this;
-
-            $rootScope.togglePlayer = function() {
-                $rootScope.toggle = $rootScope.toggle === true ? false : true;
-            };
+        fm.setSong = setSong;
+        //
+        // $rootScope.togglePlayer = function() {
+        //     $rootScope.toggle = $rootScope.toggle === true ? false : true;
+        // };
+        function setSong() {
+            fm.song = serviceShareSong.getSong();
+            console.log("shared song", fm.song);
+        }
     }
 })();

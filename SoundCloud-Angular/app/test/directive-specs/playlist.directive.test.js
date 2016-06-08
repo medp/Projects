@@ -4,21 +4,21 @@ beforeEach(module('myApp'));
 
 
 describe("Playlist directive test", function() {
-    var $compile, $rootScope, playlistElem, $controller,_playlistData;
+    var $compile, $rootScope, playlistElem, $controller, _playlistData;
     // beforeEach();
     beforeEach(function() {
         module("templates");
-        inject(function(_$compile_, _$rootScope_,_$controller_) {
+        inject(function(_$compile_, _$rootScope_, _$controller_) {
             $compile = _$compile_;
             $rootScope = _$rootScope_.$new();
             $controller = _$controller_;
             _playlistData = [{
-              title:"Title",
-              picture:"",
-              tracks:[{
-                songTitle : "song",
-                pictureSong : ""
-              }]
+                title: "Title",
+                picture: "",
+                tracks: [{
+                    songTitle: "song",
+                    pictureSong: ""
+                }]
             }];
             $controller('PlaylistController as PlaylistCtrl', {
                 $scope: $rootScope,

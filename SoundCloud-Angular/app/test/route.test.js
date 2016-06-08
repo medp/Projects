@@ -1,15 +1,14 @@
 describe('Routes test with resolves', function() {
     var httpMock = {};
-
+    beforeEach(module('myApp'));
     beforeEach(
-      module('myApp')
-      inject(function($http){
-         $http = httpMock; 
-    }));
+        inject(function($http) {
+            $http = httpMock;
+        }));
 
     var $location, $route, $rootScope;
 
-    beforeEach(inject(function(_$location_, _$route_, _$rootScope_, $httpBackend, $templateCache){
+    beforeEach(inject(function(_$location_, _$route_, _$rootScope_, $httpBackend, $templateCache) {
         $location = _$location_;
         $route = _$route_;
         $rootScope = _$rootScope_;
@@ -19,19 +18,19 @@ describe('Routes test with resolves', function() {
         httpMock.get = jasmine.createSpy('spy').and.returnValue('test');
     }));
 
-    it('should load the index page on successful load of /',
-        inject(function($injector){
-            expect($location.path()).toBe( '' );
-            // $location.path('/playlist');
-            //
-            // $rootScope.$digest();
-            //
-            // expect($location.path()).toBe( '/playlist' );
-            // expect($route.current.controller).toBe('HomeController');
-            //
-            // // We need to do $injector.invoke to resolve dependencies
-            // expect($injector.invoke($route.current.resolve.allowAccess)).toBe('test');
-    }));
+    // it('should load the index page on successful load of /',
+    //     inject(function($injector){
+    //         expect($location.path()).toBe( '' );
+    //         // $location.path('/playlist');
+    //         //
+    //         // $rootScope.$digest();
+    //         //
+    //         // expect($location.path()).toBe( '/playlist' );
+    //         // expect($route.current.controller).toBe('HomeController');
+    //         //
+    //         // // We need to do $injector.invoke to resolve dependencies
+    //         // expect($injector.invoke($route.current.resolve.allowAccess)).toBe('test');
+    // }));
 });
 
 // describe('Testing Routes', function(){

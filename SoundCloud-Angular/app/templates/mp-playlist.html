@@ -1,4 +1,4 @@
-<div ng-repeat="p in playlist | orderBy: 'title' ">
+<div ng-repeat="p in playlist | orderBy: 'title'| filter: { title: search.title}">
     <div ng-class="$index" class="image-playlist">
         <a ng-href=""><img ng-src={{p.picture}}/></a>
     </div>
@@ -8,7 +8,6 @@
             <div class="text">
                 <h4>Playlist title:</h4>
                 <h2>{{p.title}}</h2>
-
             </div>
             <span>Private</span>
         </div>
@@ -17,8 +16,8 @@
         <song-el limit="mpControl.trackLimits[$index] || mpControl.trackLimit" songs="p.tracks" ></song-el>
 
         <div class="bottom-playlist" ng-click="mpControl.showTracks(p.tracks.length,$index)" ng-if="p.tracks.length > 5 "> <!--"mpControl.showTracks(p.tracks.length)"-->
-            <span ng-hide="mpControl.trackLimits[$index] || mpControl.trackLimit !== 5 ">View {{p.tracks.length}} tracks</span>
-            <span ng-show="mpControl.trackLimits[$index] || mpControl.trackLimit !== 5 ">View fewer tracks</span>
+            <span ng-show="mpControl.trackLimits[$index] === 5 || mpControl.trackLimits[$index] === undefined ">View {{p.tracks.length}} tracks</span>
+            <span ng-hide="mpControl.trackLimits[$index] === 5 || mpControl.trackLimits[$index] === undefined ">View fewer tracks</span>
         </div>
         <div class="playlist-footer">
             <button type="button">Share</button>

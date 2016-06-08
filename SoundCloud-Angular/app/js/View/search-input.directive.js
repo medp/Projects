@@ -4,7 +4,9 @@
     function searchInput() {
         var directive = {
             templateUrl: "templates/search-input.html",
-            restrict: "EA"
+            restrict: "EA",
+            controller: 'searchInputController',
+            controllerAs: 'searchCtrl'
         };
         return directive;
     }
