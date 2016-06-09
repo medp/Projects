@@ -3,9 +3,9 @@
 
     angular.module('myApp').factory('serviceShareSong', serviceShareSong);
 
-    // serviceShareData.$inject = ['playlistRepo'];
+    serviceShareSong.$inject = ['$rootScope'];
 
-    function serviceShareSong() {
+    function serviceShareSong($rootScope) {
         var list = [];
 
         return {
@@ -21,8 +21,12 @@
             }
             list.push(item);
             console.log(list);
+            $rootScope.$broadcast('messageAdded');
         }
 
+        function getImage(){
+          // "/img/play.png"
+        }
         function removeItem() {
             list.pop();
             console.log(list);

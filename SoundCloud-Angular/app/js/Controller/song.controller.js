@@ -3,22 +3,31 @@
 
     angular.module('myApp').controller('SongController', SongController);
 
-    SongController.$inject=['serviceShareSong'];
+    SongController.$inject = ['serviceShareSong'];
 
     function SongController(serviceShareSong) {
         var vm = this;
+        vm.song = {
+            show: false,
+            item: '',
+            index: ''
+        };
         vm.togglePlayer = togglePlayer;
-        vm.show = false;
-
-        function togglePlayer(song) {
-            vm.song = song;
-            console.log("data", vm.song);
-            if (vm.show === false){
-                vm.show = true;
+        function togglePlayer(song,index) {
+            if (vm.song.show === false) {
+                vm.song.item = song;
+                vm.song.show = true;
+                vm.song.index = index;
                 serviceShareSong.addItem(vm.song);
-                console.log(vm.show);
-          }  else {
-                  vm.show = false;
+                console.log(vm.song.show);
+            } else if(vm.song.index != index){
+                serviceShareSong.removeItem();
+                vm.song.item = song;
+                vm.song.show = true;
+                vm.song.index = index;
+                serviceShareSong.addItem(vm.song);
+            } else{
+                vm.song.show = false;
                 serviceShareSong.removeItem();
             }
         }
