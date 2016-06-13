@@ -9,6 +9,7 @@
 
         function toggle() {
             var myEl = angular.element(document.querySelector('#myDropdown'));
+            dropCtrl.myEl = myEl;
             myEl.toggleClass('show');
         }
     }

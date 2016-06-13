@@ -3,7 +3,7 @@ var scope, _playlistData;
 
 beforeEach(module('myApp'));
 
-describe("test controller", function() {
+describe("Spinner test controller", function() {
     var rootScope;
     beforeEach(inject(function($controller, $rootScope) {
         rootScope = $rootScope.$new();
@@ -15,5 +15,8 @@ describe("test controller", function() {
     it('should respond to the resource loaded event', function() {
         rootScope.$emit('Loaded');
         expect(rootScope.isLoading).toBeTruthy();
+    })
+    it('should not respond to resource loaded event', function() {
+        expect(rootScope.isLoading).toBeFalsy();
     })
 });

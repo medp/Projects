@@ -21,5 +21,5 @@ describe("test repository", function() {
         spyOn(repo, "getData");
         var promiseData = repo.getData();
         expect(repo.getData).toHaveBeenCalled();
-    })
+    });
 });
